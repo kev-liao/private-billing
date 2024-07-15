@@ -1,0 +1,67 @@
+[package]
+name = "divtokens"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes = "0.8.1"
+ark-bls12-381 = "0.3.0"
+ark-crypto-primitives = "0.3.0"
+ark-ec = "0.3.0"
+ark-ed-on-bls12-381 = { version = "^0.3.0", features = ["r1cs"] }
+ark-ff = "0.3.0"
+ark-groth16 = "0.3.0"
+ark-r1cs-std = "0.3.0"
+ark-relations = "0.3.0"
+ark-serialize = { version = "0.3.0", features = ["derive"] }
+ark-sponge = { git = "https://github.com/arkworks-rs/sponge", rev = "51d6fc9" }
+#ark-sponge = "0.3.0"
+ark-std = "0.3.0"
+arkworks-native-gadgets = { git = "https://github.com/kev-liao/arkworks-gadgets" }
+arkworks-r1cs-circuits = { git = "https://github.com/kev-liao/arkworks-gadgets" }
+arkworks-r1cs-gadgets = { git = "https://github.com/kev-liao/arkworks-gadgets" }
+arkworks-utils = { git = "https://github.com/kev-liao/arkworks-gadgets", features = ["poseidon_bls381_x3_3", "poseidon_bls381_x5_3"] }
+bincode = "1.3.3"
+bit-vec = "0.6.3"
+blake3 = "1.3.1"
+bloomfilter = "1.0.9"
+challenge-bypass-ristretto = { git = "https://github.com/kev-liao/challenge-bypass-ristretto", features = ["serde_base64"] }
+derivative = "2.2.0"
+digest = "0.9" #
+futures = "0.3.21"
+hamming = "0.1.3"
+hmac = "0.10" #
+parking_lot = "0.12.0"
+rand = "0.7" #
+reqwest = { version = "0.11.10", features = ["json", "rustls-tls"] }
+serde = "1.0.136"
+serde_derive = "1.0.136"
+serde_json = "1.0.79"
+serial_test = "0.6.0"
+sha2 = "0.9" #
+tokio = { version = "1.17.0", features = ["full"] }
+warp = { version = "0.3.2", features = ["tls"] }
+
+[[bin]]
+name = "exchange"
+path = "src/bin/exchange/main.rs"
+
+[[bin]]
+name = "advertiser"
+path = "src/bin/advertiser/main.rs"
+
+[[bin]]
+name = "client"
+path = "src/bin/client/main.rs"
+
+[[bin]]
+name = "publisher"
+path = "src/bin/publisher/main.rs"
+
+[[bin]]
+name = "issuebench"
+path = "src/bin/issuebench/main.rs"
+
+[[bin]]
+name = "redeembench"
+path = "src/bin/redeembench/main.rs"
